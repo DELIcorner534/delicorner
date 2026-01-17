@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Connexion ou inscription - Delicorner">
+    <title>Connexion - Delicorner</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <a href="index.html">
+                            <span class="logo-text">DELI<span class="logo-accent">CORNER</span></span>
+                            <span class="halal-badge">HALAL</span>
+                        </a>
+                    </div>
+                    <div class="nav-right">
+                        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <ul class="nav-menu">
+                            <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+                            <li><a href="menu.html" data-i18n="nav.menu">Menu</a></li>
+                            <li><a href="about.html" data-i18n="nav.about">À propos</a></li>
+                            <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                            <li>
+                                <!-- Language Selector -->
+                                <div class="language-selector">
+                                    <button class="lang-btn" id="langBtn">
+                                        <img src="images/flags/fr.svg" alt="Flag" class="lang-icon" id="langIcon">
+                                        <span class="lang-code" id="langCode">FR</span>
+                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M3 4.5l3 3 3-3"/>
+                                        </svg>
+                                    </button>
+                                    <div class="lang-dropdown" id="langDropdown">
+                                        <a href="#" data-lang="fr" class="lang-option">
+                                            <img src="images/flags/fr.svg" alt="Français">
+                                            <span>FR</span>
+                                        </a>
+                                        <a href="#" data-lang="nl" class="lang-option">
+                                            <img src="images/flags/nl.svg" alt="Nederlands">
+                                            <span>NL</span>
+                                        </a>
+                                        <a href="#" data-lang="en" class="lang-option">
+                                            <img src="images/flags/gb.svg" alt="English">
+                                            <span>EN</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="cart.html">🛒 <span id="cartCount" class="cart-count" style="display: none;">0</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Login/Register Content -->
+    <main class="auth-main">
+        <div class="container">
+            <div class="auth-container">
+                <!-- Login Form -->
+                <div class="auth-form-container" id="loginForm">
+                    <h2>Connexion</h2>
+                    <p class="auth-subtitle">Connectez-vous à votre compte</p>
+                    <form class="auth-form" id="loginFormElement">
+                        <div class="form-group">
+                            <label for="loginEmail">Email *</label>
+                            <input type="email" id="loginEmail" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Mot de passe *</label>
+                            <input type="password" id="loginPassword" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Se connecter</button>
+                        <p class="auth-switch">
+                            Pas encore de compte ? <a href="#" id="showRegister">S'inscrire</a>
+                        </p>
+                    </form>
+                    <div class="auth-message" id="loginMessage"></div>
+                </div>
+
+                <!-- Register Form -->
+                <div class="auth-form-container" id="registerForm" style="display: none;">
+                    <h2>Inscription</h2>
+                    <p class="auth-subtitle">Créez votre compte pour suivre vos commandes</p>
+                    <form class="auth-form" id="registerFormElement">
+                        <div class="form-group">
+                            <label for="registerName">Nom complet *</label>
+                            <input type="text" id="registerName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerEmail">Email *</label>
+                            <input type="email" id="registerEmail" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPhone">Téléphone *</label>
+                            <input type="tel" id="registerPhone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPassword">Mot de passe *</label>
+                            <input type="password" id="registerPassword" name="password" required minlength="6">
+                            <small>Minimum 6 caractères</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPasswordConfirm">Confirmer le mot de passe *</label>
+                            <input type="password" id="registerPasswordConfirm" name="passwordConfirm" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">S'inscrire</button>
+                        <p class="auth-switch">
+                            Déjà un compte ? <a href="#" id="showLogin">Se connecter</a>
+                        </p>
+                    </form>
+                    <div class="auth-message" id="registerMessage"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Delicorner</h3>
+                    <p>Votre sandwicherie artisanale préférée</p>
+                    <div class="halal-badge-footer">HALAL CERTIFIÉ</div>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>📍 Votre adresse</li>
+                        <li>📞 Votre téléphone</li>
+                        <li>✉️ Votre email</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Horaires</h4>
+                    <ul>
+                        <li>Lun - Ven: 8h - 18h</li>
+                        <li>Samedi: 9h - 17h</li>
+                        <li>Dimanche: 10h - 15h</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Delicorner. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
